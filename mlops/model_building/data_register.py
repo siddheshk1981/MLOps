@@ -7,7 +7,7 @@ repo_id = "siddhesh1981/bank-customer-churn"
 repo_type = "dataset"
 
 # Initialize API client
-api = HfApi(token=os.getenv("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"))
+api = HfApi(token=os.getenv("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"))
 
 # Step 1: Check if the space exists
 try:

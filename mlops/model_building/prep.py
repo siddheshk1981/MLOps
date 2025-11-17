@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from huggingface_hub import login, HfApi
 
 # Define constants for the dataset and output paths
-api = HfApi(token=os.getenv("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"))
+api = HfApi(token=os.getenv("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"))
 DATASET_PATH = "hf://datasets/siddhesh1981/bank-customer-churn/bank_customer_churn.csv"
 bank_dataset = pd.read_csv(DATASET_PATH)
 print("Dataset loaded successfully.")
