@@ -108,7 +108,7 @@ joblib.dump(best_model, "best_churn_model.joblib")
 repo_id = "siddhesh1981/churn-model"
 repo_type = "model"
 
-api = HfApi(token=os.getenv("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"))
+api = HfApi(token=os.getenv("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"))
 
 # Step 1: Check if the space exists
 try:
