@@ -60,7 +60,7 @@ files = ["Xtrain.csv","Xtest.csv","ytrain.csv","ytest.csv"]
 for file_path in files:
     api.upload_file(
         path_or_fileobj=file_path,
-        path_in_repo="mlops/model_building",  # just the filename
+        path_in_repo=file_path.split("/")[-1],  # just the filename
         repo_id="siddhesh1981/bank-customer-churn",
         repo_type="dataset",
     )
