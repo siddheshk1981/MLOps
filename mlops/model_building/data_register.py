@@ -7,7 +7,7 @@ repo_id = "siddhesh1981/bank-customer-churn"
 repo_type = "dataset"
 
 # Initialize API client
-api = HfApi(token=os.getenv("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"))
+api = HfApi(token=os.getenv("HF_TOKEN"))
 
 # Step 1: Check if the space exists
 try:
@@ -19,7 +19,7 @@ except RepositoryNotFoundError:
     print(f"Space '{repo_id}' created.")
 
 api.upload_folder(
-    folder_path="/content/drive/MyDrive/mlops/data",
+    folder_path="mlops/data",
     repo_id=repo_id,
     repo_type=repo_type,
 )

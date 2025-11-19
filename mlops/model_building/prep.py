@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from huggingface_hub import login, HfApi
 
 # Define constants for the dataset and output paths
-api = HfApi(token=os.getenv("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"))
+api = HfApi(token=os.getenv("HF_TOKEN"))
 DATASET_PATH = "hf://datasets/siddhesh1981/bank-customer-churn/bank_customer_churn.csv"
 bank_dataset = pd.read_csv(DATASET_PATH)
 print("Dataset loaded successfully.")
@@ -49,16 +49,13 @@ Xtrain, Xtest, ytrain, ytest = train_test_split(
     random_state=42    # Ensures reproducibility by setting a fixed random seed
 )
 
-Xtrain.to_csv("/content/drive/MyDrive/mlops/data/Xtrain.csv",index=False)
-Xtest.to_csv("/content/drive/MyDrive/mlops/data/Xtest.csv",index=False)
-ytrain.to_csv("/content/drive/MyDrive/mlops/data/ytrain.csv",index=False)
-ytest.to_csv("/content/drive/MyDrive/mlops/data/ytest.csv",index=False)
+Xtrain.to_csv("Xtrain.csv",index=False)
+Xtest.to_csv("Xtest.csv",index=False)
+ytrain.to_csv("ytrain.csv",index=False)
+ytest.to_csv("ytest.csv",index=False)
 
 
-files = ["/content/drive/MyDrive/mlops/data/Xtrain.csv",
-         "/content/drive/MyDrive/mlops/data/Xtest.csv",
-         "/content/drive/MyDrive/mlops/data/ytrain.csv",
-         "/content/drive/MyDrive/mlops/data/ytest.csv"]
+files = ["Xtrain.csv","Xtest.csv","ytrain.csv","ytest.csv"]
 
 for file_path in files:
     api.upload_file(
